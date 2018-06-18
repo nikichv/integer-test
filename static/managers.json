@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "name": "Rick Sanchez",
+    "photo": "https://avatarfiles.alphacoders.com/855/85557.png"
+  },
+  {
+    "name": "Morty Smith",
+    "id": 1,
+    "photo": "https://avatarfiles.alphacoders.com/104/104391.png"
+  },
+  {
+    "name": "Mr. Meeseeks",
+    "id": 2,
+    "photo": "http://t6.rbxcdn.com/b3750837c40975a7f1c62f69ba9f3587"
+  },
+  {
+    "name": "Birdperson",
+    "id": 3,
+    "photo": "https://images.8tracks.com/avatar/i/005/366/274/62776.original-3286.png"
+  }
+]
