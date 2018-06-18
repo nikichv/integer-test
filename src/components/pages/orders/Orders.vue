@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 import OrdersTable from '@/components/blocks/ordersTable';
 
@@ -25,8 +25,16 @@ export default {
       this.removeOrder(id);
     },
   },
+  computed: {
+    ...mapState({
+      orders: state => state.orders,
+    }),
+  },
   created() {
-    this.fetchOrders();
+    // Prevent json re-fetch
+    if (Object.keys(this.orders).length === 0) {
+      this.fetchOrders();
+    }
   },
 };
 </script>

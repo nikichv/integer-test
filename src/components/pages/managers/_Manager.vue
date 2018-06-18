@@ -16,15 +16,20 @@
             >
             <div class="card-body">
               <h5 class="card-title">{{ currentManager.name }}</h5>
-              <p>Current orders: </p>
-              <ul class="list-group list-group-flush">
-                <template v-for="order in currentManagerOrders">
-                  <li
-                    :key="order.id"
-                    class="list-group-item"
-                  >{{ order.name }}</li>
-                </template>
-              </ul>
+              <template v-if="currentManagerOrders.length > 0">
+                <p>Current orders: </p>
+                <ul class="list-group list-group-flush">
+                  <template v-for="order in currentManagerOrders">
+                    <li
+                      :key="order.id"
+                      class="list-group-item"
+                    >{{ order.name }}</li>
+                  </template>
+                </ul>
+              </template>
+              <template v-else>
+                <p>Sorry, no orders are available for this manager</p>
+              </template>
             </div>
           </div>
         </div>

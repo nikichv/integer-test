@@ -46,11 +46,16 @@ export default {
   computed: {
     ...mapState({
       managers: state => state.managers,
+      order: state => state.orders,
     }),
   },
   created() {
     this.fetchManagers();
-    this.fetchOrders();
+
+    // Prevent json re-fetch
+    if (Object.keys(this.orders).length === 0) {
+      this.fetchOrders();
+    }
   },
 };
 </script>
