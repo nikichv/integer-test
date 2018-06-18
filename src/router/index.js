@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-const managers = () => import('@/components/pages/managers/Managers.vue').then(m => m.default || m.pageManagers);
-const manager = () => import('@/components/pages/managers/_Manager.vue').then(m => m.default || m.pageManager);
+const managers = () => import('@/components/pages/managers').then(m => m.default || m.pageManagers);
+const manager = () => import('@/components/pages/managers').then(m => m.default || m.pageManager);
 const orders = () => import('@/components/pages/orders').then(m => m.default || m);
 const newOrder = () => import('@/components/pages/newOrder').then(m => m.default || m);
 
@@ -17,6 +17,10 @@ export default new Router({
     return { x: 0, y: 0 };
   },
   routes: [
+    {
+      path: '/',
+      redirect: '/managers',
+    },
     {
       path: '/managers',
       name: 'managers',
